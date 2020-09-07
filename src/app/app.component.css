@@ -1,0 +1,143 @@
+.parent{
+    background-color: white;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+.header img{
+    height: 90px;
+}
+
+.errorMessage {
+    font-size: 9px;
+    position: absolute;
+    top: 100%;
+    color: red;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 0;
+}
+
+.form-content{
+    position: relative;
+}
+
+.form-background img{
+    
+    height: 575px;
+}
+
+.form-fields{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    top: 11%;
+    width: 100%;
+}
+.form-parent{
+    margin: 10px 0 0 0;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 60%;
+    padding: 15px 15px;
+}
+.form-heading{
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.form-heading span {
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.position-static{
+    position: static;
+}
+.d-flex{
+    display: flex;
+}
+.successFulSubmission{
+    font-size: 10px;
+    text-align: center;
+    color: #95BE2C;
+}
+.field-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.search-by-options{
+    display: flex;
+    margin: 8px 0;
+    position: relative;
+    flex-direction: column;
+    
+}
+.option input{
+    margin: 0 4px 0 0;
+}
+
+.search-by{
+    margin: 28px 0 35px 0;
+}
+.form-span{
+    color: #394761;
+    font-size: 10px;
+    margin: 0 0 5px 0;
+}
+.option{
+    display: flex;
+    align-items: center;
+}
+.option label{
+    margin: 0 !important;
+}
+.field-container input{
+    border-radius: 4px;
+    background-color: #F7F9FC;
+    border: 1px solid #A8C4E5;
+    padding: 8px 14px;
+    font-size: 10px;
+}
+.field-container input::placeholder{
+    color: #95BE2C;
+}
+
+.radio-seperator{
+    margin-left: 20px;
+}
+.submit-details img{
+    height: 10px;
+}
+.submit-details{
+    background-color: #95BE2C;
+    display: flex;
+    color: #fff;
+    font-size: 8px;
+    align-items: center;
+    padding: 11px 8px;
+    justify-content: space-between
+}
+
+@media only screen and (max-width: 1024px) {
+    .form-background img {
+        display: none;
+    }
+    .form-parent{
+        width: 80%;
+    }
+    .form-content{
+        width: 100%;
+    }
+    .form{
+        margin: 0;
+    }
+}

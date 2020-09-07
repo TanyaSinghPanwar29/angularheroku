@@ -1,19 +1,62 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">grokonez</a>
-    </div>
-    <ul class="nav navbar-nav" routerLinkActive="active">
-      <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
-      <li class="nav-item" *ngFor="let link of links">
-        <a class="nav-link" [routerLink]="link.path">{{ link.text }}</a>
-      </li>
-      <li class="nav-item" *ngIf="isLoggedIn">
-        <a class="nav-link" routerLink="logout" (click)="logout()">Logout</a>
-      </li>
-    </ul>
+<div class="parent">
+  <div class="header">
+    <img src="./assets/logo.png">
   </div>
-</nav>
-<div class="container">
-  <router-outlet></router-outlet>
+  <div class="form">
+    <div class="form-content">
+      <div class="form-background">
+        <img src="./assets/form-background.svg">
+      </div>
+      <div class="form-fields">
+        <div class="form-heading">
+          <img src="./assets/heading-logo.svg"> <span>Sample Form</span>
+        </div>
+     
+        <div class="form-parent">
+          <form [formGroup]="zopperForm">
+               <div class="field-container">
+                         <span class="form-span">Name</span>
+                         <input  formControlName="name" type="text" placeholder="Your Name" >
+                         <div class="errorMessage">
+                          <span>{{ this.getErrorMessage(this.zopperForm.get('name'), 'Name') }}</span>
+                        </div>
+                     </div>
+
+          <div class="search-by">
+            <span class="form-span">Search By</span>
+            <div class="search-by-options">
+              <div class="d-flex">
+                <div class="option">
+                  <input name="search" (change)="this.switchSearchType($event)" formControlName="search" value="phone" id="phone" type="radio" />
+                  <label for="phone"  class="form-span">Phone Number</label>
+                 
+                </div>
+                <div class="option radio-seperator">
+                  <input name="search" (change)="this.switchSearchType($event)" formControlName="search" value="email" id="email" type="radio" />
+                  <label for="email" class="form-span">Email Address</label>
+                </div>
+              </div>
+              
+              <div class="errorMessage position-static">
+                <span>{{ this.getErrorMessage(this.zopperForm.get('search'), 'Search') }}</span>
+              </div>
+            </div>
+            <div class="field-container">
+              <input (keypress)="this.validateSearchInput($event)" formControlName="searchInput" type={{this.searchType}}  placeholder="Search By Input">
+              <div class="errorMessage">
+                <span>{{ this.getErrorMessage(this.zopperForm.get('searchInput'), 'Search Input') }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="submit-details" (click)="submitForm()">
+            <span>SUBMIT</span><img src="./assets/submit-btn-arrow.svg">
+          </div>
+          <div class="successFulSubmission">
+            <span>{{this.successfulSubmission}}</span>
+          </div>
+        </form> 
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
