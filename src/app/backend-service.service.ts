@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class BackendServiceService {
 
   constructor(private httpClient: HttpClient) { }
-  baseUrl: string = "http://localhost:3000";
+  baseUrl: string = "https://zopperbackend.herokuapp.com";
   submitDetails: string = "/submit-details";
   
   submit(data){
