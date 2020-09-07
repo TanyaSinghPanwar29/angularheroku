@@ -39,6 +39,7 @@ export class AppComponent {
     
     this.backendService.submit(body).subscribe(res => {
       this.successfulSubmission = "Details Successfully Submitted";
+      this.zopperForm.reset();
     })
   
     console.log(this.zopperForm.value)
